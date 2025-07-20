@@ -11,8 +11,27 @@
 
   <script>
     const output = document.getElementById("output");
-    
-    # ADD CODE HERE
+
+    //Function to update webpage with activity using timing
+    function showActivity(activity, time) {
+      setTimeout(() => { //Use setTimeout to display activities with timings
+        output.textContent = activity; // Update current content
+      }, time);
+    }
+
+    // Array of activities and timings
+    const dailyActivities = [
+      { activity: "Wake up 🌞", time: 1000 },
+      { activity: "Go for a hike 🌳", time: 3000 },
+      { activity: "Pet my cat 🐈", time: 6000 },
+      { activity: "Have lunch 🥪", time: 9000 },
+      { activity: "Hang out with friends 🎈", time: 12000 },
+      { activity: "Sleep 🌙", time: 15000 }
+    ];
+
+    // For each activity, run showActivity to display them
+    dailyActivities.forEach(activity => {
+      showActivity(activity.activity, activity.time);
 
   </script>
 
