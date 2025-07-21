@@ -29,6 +29,20 @@
       { activity: "Sleep 🌙", time: 15000 }
     ];
 
+    //Function to add surprize activity in a random position in the dailyActivities array
+    function addSurpriseActivity() {
+        const randomTime = Math.floor(Math.random() * 15000); // Random time between 0 and 15000
+        const surpriseActivity = { activity: "Flash mob 💃", time: randomTime }; //Define new activity
+        //Generate random number between 1 and the length of the dailyActivities array
+        const randomIndex = Math.floor(Math.random() * (dailyActivities.length + 1));
+
+        //Insert surprise activity into a random position within the dailyActivities array
+        dailyActivities.splice(randomIndex, 0, surpriseActivity);
+    }
+
+     // Insert the surprise activity
+    addSurpriseActivity();
+    
     // For each activity, run showActivity to display them
     dailyActivities.forEach(activity => {
       showActivity(activity.activity, activity.time);
